@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Adding Style to the Table-->
+    <meta charset="utf-8">
+    <style type="text/css">
+        @font-face {
+            font-family: "Emblema One";
+            src: url("http://wickedlysmart.com/hfhtmlcss/chapter8/journal/EmblemaOne-Regular.woff"),
+                url("http://wickedlysmart.com/hfhtmlcss/chapter8/journal/EmblemaOne-Regular.ttf");
+        }
+
+        body {
+            font-family: Verdana, Geneva, Arial, sans-serif;
+            font-size: small;
+        }
+
+        h1,
+        h2 {
+            color: #cc6600;
+            border-bottom: thin dotted #888888;
+        }
+
+        h1 {
+            font-family: "Emblema One", sans-serif;
+            font-size: 220%;
+        }
+
+        h2 {
+            font-size: 130%;
+            font-weight: normal;
+        }
+
+        blockquote {
+            font-style: italic;
+        }
+
+        table {
+            margin-left: 20px;
+            margin-right: 20px;
+            border: thin solid black;
+            caption-side: bottom;
+        }
+
+
+        table {
+            margin-left: 20px;
+            margin-right: 20px;
+            border: thin solid black;
+            caption-side: bottom;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: thin dotted gray;
+            padding: 5px;
+        }
+
+        caption {
+            font-style: italic;
+            padding-top: 8px;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+        }
+    </style>
+    <title>Testing Tony's Travels</title>
+</head>
+
+<body>
+    <table>
+        <!--Adding caption to the table-->
+        <caption>The cities I visited on my Segway'n USA travels</caption>
+        <tr>
+            <th>City</th>
+            <th>Date</th>
+            <th>Temperature</th>
+            <th>Altitude</th>
+            <th>Population</th>
+            <th>Diner Rating</th>
+        </tr>
+        <tr>
+            <td>Walla Walla, WA</td>
+            <td>June 15th</td>
+            <td>75</td>
+            <td>1,204 ft</td>
+            <td>29,686</td>
+            <td>4/5</td>
+        </tr>
+        <tr>
+            <td>Magic City, ID</td>
+            <td>June 25th</td>
+            <td>74</td>
+            <td>5,312 ft</td>
+            <td>50</td>
+            <td>3/5</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Truth or Consequences, NM</td>
+            <td class="center">August 9th</td>
+            <td class="center">93</td>
+            <td rowspan="2" class="right">4,242 ft</td>
+            <td rowspan="2" class="right">7,289</td>
+            <td class="center">5/5</td>
+        </tr>
+        <tr>
+            <td class="center">August 27th</td>
+            <td class="center">98</td>
+            <td class="center">4/5</td>
+        </tr>
+    </table>
+</body>
+
+</html>

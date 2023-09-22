@@ -1,0 +1,743 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History - My ASP.NET Application</title>
+    <link href="/Reference/Cougar/OrderFood/CSS/style1.css" rel="stylesheet"/>
+    <link href="/Reference/Cougar/OrderFood/CSS/style2.css" rel="stylesheet"/>
+
+</head>
+<body class="cougarLightBackground">
+
+
+    
+    <div class="navbar">
+        <ul class="navbar-nav">
+                        <li><a href="/order">Order Food</a></li>
+            <li><a href="/order/history">Order History</a></li>
+        </ul>
+        
+    
+        <ul class="navbar-nav navbar-right">
+            <li>
+                <a href="/logout">Sign out</a>
+            </li>
+            <li class="navbar-text">
+                    Hello, Sakthi Chandrasekaran!
+            </li>
+        </ul>
+    
+
+    </div>
+    
+    <div class="cougarFormviewerViewFormContentWrapper">
+
+        <div class="cougarFormviewerViewCenteredContent" style="width: 90%; max-width: 1000px;">
+            <div class="cougarFormviewerViewFormCard">
+                <div class="cougarFormviewerViewAccentBanner cougarAccentBackground"></div>
+                <div class="cougarFormviewerViewFormContent ">
+                    
+
+
+<div class="history">
+    <h1 class="pageHeading">Order History</h1>
+    <table id="historyTable" style="width:100%;" class="stripe">
+        <thead>
+            <tr>
+                <th class="col-payPeriod">
+                    <label for="PayPeriodStart">Pay Period</label>
+                </th>
+                <th class="col-orderDate">
+                    <label for="OrderDate">Date</label>
+                </th>
+                <th class="col-orderCompleted">
+                </th>
+                <th class="col-itemsOrdered">
+                    <label for="ItemsOrdered">Items</label>
+                </th>
+                <th class="col-orderTotal">
+                    <label for="OrderTotal">Total</label>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td class="col-payPeriod">
+                    8/21/2023 to <br/>9/3/2023
+                </td>
+                <td class="col-orderDate">
+                    8/21/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Monday: Fresh Fettucine Chicken Alfredo
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    8/4/2023 to <br/>8/6/2023
+                </td>
+                <td class="col-orderDate">
+                    8/4/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Chicken fingers and fries with plum sauce
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $6.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    7/24/2023 to <br/>8/6/2023
+                </td>
+                <td class="col-orderDate">
+                    7/24/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Monday: Aglio Oglio (garlic and olive oil) pasta with italian sausage
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    7/19/2023 to <br/>7/23/2023
+                </td>
+                <td class="col-orderDate">
+                    7/19/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Wednesday: Chicken Pot Pie
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    6/30/2023 to <br/>7/9/2023
+                </td>
+                <td class="col-orderDate">
+                    6/30/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Chicken fingers and fries with plum sauce
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $6.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    6/13/2023 to <br/>6/25/2023
+                </td>
+                <td class="col-orderDate">
+                    6/13/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Tuesday: CRISPY SHRIMP Tacos with Chipotle Aioli
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    5/30/2023 to <br/>6/11/2023
+                </td>
+                <td class="col-orderDate">
+                    5/30/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Chicken fingers and fries with plum sauce
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $6.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    5/26/2023 to <br/>5/28/2023
+                </td>
+                <td class="col-orderDate">
+                    5/26/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Friday: Nasi Goreng (Indonesian Fried Rice)
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    5/15/2023 to <br/>5/28/2023
+                </td>
+                <td class="col-orderDate">
+                    5/15/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Monday: Rose Chicken Tortellini
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    5/9/2023 to <br/>5/14/2023
+                </td>
+                <td class="col-orderDate">
+                    5/9/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Tuesday: Chicken Fajitas with Chips &#39;n&#39; Guac
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    4/28/2023 to <br/>4/30/2023
+                </td>
+                <td class="col-orderDate">
+                    4/28/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Friday: Spicy Beef Bulgogi Rice Bowl with Kimchi &lt;3
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    4/14/2023 to <br/>4/16/2023
+                </td>
+                <td class="col-orderDate">
+                    4/14/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Friday: CHICKEN KHAO SOI!!!!!!
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    4/4/2023 to <br/>4/16/2023
+                </td>
+                <td class="col-orderDate">
+                    4/4/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Tuesday: Roasted Chicken Taco with PEACH PICO
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    3/23/2023 to <br/>4/2/2023
+                </td>
+                <td class="col-orderDate">
+                    3/23/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Thursday: Mozza Beef Burger and Fries
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    3/16/2023 to <br/>3/19/2023
+                </td>
+                <td class="col-orderDate">
+                    3/16/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Thursday: Beef Burger with Candied Bacon and Blackberry Jam!!!!
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    2/27/2023 to <br/>3/5/2023
+                </td>
+                <td class="col-orderDate">
+                    2/27/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Monday: Shrimp Scampi!
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    2/10/2023 to <br/>2/19/2023
+                </td>
+                <td class="col-orderDate">
+                    2/10/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Friday: Mediterranean Salmon Power Bowl: Glazed Salmon, Quinoa, Spinach, Cucumber, Cherry Tom, red onion, Lemon Dill Yogurt
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    2/3/2023 to <br/>2/5/2023
+                </td>
+                <td class="col-orderDate">
+                    2/3/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Friday: Chicken Fried Rice
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    1/26/2023 to <br/>2/5/2023
+                </td>
+                <td class="col-orderDate">
+                    1/26/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Thursday: Grilled Cheese Burger w/Side of Fries
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    1/25/2023 to <br/>2/5/2023
+                </td>
+                <td class="col-orderDate">
+                    1/25/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Wednesday: Montreal Smoked Meat Sandwich on Rye w/Side of Potato Salad
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    1/19/2023 to <br/>1/22/2023
+                </td>
+                <td class="col-orderDate">
+                    1/19/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Thursday: Chicken Parmesan Burger w/Fries
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    1/16/2023 to <br/>1/22/2023
+                </td>
+                <td class="col-orderDate">
+                    1/16/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Monday: (LIMITED QUANTITY for fresh pasta) In-house Spinach, Basil infused Fettuccini White Sauce w/Baked Chicken
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    1/4/2023 to <br/>1/8/2023
+                </td>
+                <td class="col-orderDate">
+                    1/4/2023
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Pesto chicken sandwich on fresh ciabatta w/ fennel + orange salad
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    12/29/2022 to <br/>1/8/2023
+                </td>
+                <td class="col-orderDate">
+                    12/29/2022
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Beef dip burger, cheese, crispy onions, horseradish mayo, dip to dip your beef dip in + fries
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    12/13/2022 to <br/>12/25/2022
+                </td>
+                <td class="col-orderDate">
+                    12/13/2022
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Shrimp Tacos : chipotle aioli, breaded shrimp, pickled red cabbage, cilantro
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    12/9/2022 to <br/>12/11/2022
+                </td>
+                <td class="col-orderDate">
+                    12/9/2022
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Teriyaki chicken noodle bowl, edamame, peppers, carrots, egg noodles
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    11/29/2022 to <br/>12/11/2022
+                </td>
+                <td class="col-orderDate">
+                    11/29/2022
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Chili Cheese Fries (beef)
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    11/22/2022 to <br/>11/27/2022
+                </td>
+                <td class="col-orderDate">
+                    11/22/2022
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Gochujang Chicken w/Asian Slaw Tacos
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    11/17/2022 to <br/>11/27/2022
+                </td>
+                <td class="col-orderDate">
+                    11/17/2022
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Fried Chicken Deluxe sandwich with Spicy mayo and fries, (Lettuce, Tomato, Red onion, 3 Pickles.)
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    11/15/2022 to <br/>11/27/2022
+                </td>
+                <td class="col-orderDate">
+                    11/15/2022
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Crunch Wrap Supreme: Ground Beef, Sour Cream, Cheddar, Tomato, Lettuce, Nacho Cheese
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+            <tr>
+                <td class="col-payPeriod">
+                    11/14/2022 to <br/>11/27/2022
+                </td>
+                <td class="col-orderDate">
+                    11/14/2022
+                </td>
+                <td class="col-orderCompleted">
+                        <span class="ui-button-icon ui-icon ui-icon-check"></span>
+                </td>
+                <td class="col-itemsOrdered">
+                    <ul>
+                            <li>
+                                1 - Chef Salad w/Chicken
+                            </li>
+                    </ul>
+                </td>
+                <td class="col-orderTotal">
+                    $5.00
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <hr />
+        <footer>
+            <p style="color: white;">
+                &copy; 2023 - Cougar Drilling Solutions 
+                
+            </p>
+        </footer>
+    </div>
+
+    <script src="/bundles/jquery?v=2u0aRenDpYxArEyILB59ETSCA2cfQkSMlxb6jbMBqf81"></script>
+
+    
+   
+
+</body>
+</html>

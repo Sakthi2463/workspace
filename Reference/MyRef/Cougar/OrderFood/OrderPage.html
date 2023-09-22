@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Food - My ASP.NET Application</title>
+    <link href="/Reference/Cougar/OrderFood/CSS/style1.css" rel="stylesheet"/>
+    <link href="/Reference/Cougar/OrderFood/CSS/style2.css" rel="stylesheet"/>
+
+
+</head>
+<body class="cougarLightBackground">
+
+
+    
+    <div class="navbar">
+        <ul class="navbar-nav">
+                        <li><a href="/order">Order Food</a></li>
+            <li><a href="/order/history">Order History</a></li>
+        </ul>
+        
+    
+        <ul class="navbar-nav navbar-right">
+            <li>
+                <a href="/logout">Sign out</a>
+            </li>
+                <li class="navbar-text" style="text-align: left;">
+                    <div><span style="">Pay period:</span> 9/18/2023 to 10/1/2023</div>
+                    <div><span style="width: 80px; display:inline-block;">Balance:</span> $0.00</div>
+                </li>
+            <li class="navbar-text">
+                    Hello, Sakthi Chandrasekaran!
+            </li>
+        </ul>
+    
+
+    </div>
+    
+    <div class="cougarFormviewerViewFormContentWrapper">
+
+        <div class="cougarFormviewerViewCenteredContent" style="width: 90%; max-width: 1000px;">
+            <div class="cougarFormviewerViewFormCard">
+                <div class="cougarFormviewerViewAccentBanner cougarAccentBackground"></div>
+                <div class="cougarFormviewerViewFormContent ">
+                    
+
+
+<h1 class="pageHeading">Today's Menu</h1>
+<div class="order mainPane" data-bind="with: Cafeteria.OrderPage">
+       
+    <div class="menuPane">
+        <div class="mealtime-line"><span class="mealtime-heading">Breakfast:</span> 8:00 AM - 9:45 AM</div>
+        <div class="mealtime-line"><span class="mealtime-heading">Lunch:</span> 9:45 AM - 2:00 PM</div>
+        <div class="mealtime-line"><span class="mealtime-heading">Supper:</span> 2:00 PM - 11:59 PM</div>
+
+        <div class="menuAccordion" data-bind="accordion: {refreshOn: menuItemCategories}">
+            <!-- ko foreach: menuItemCategories -->
+            <h3 data-bind="text: category"></h3>
+            <div>
+                <table class="menu stripe">
+                    <thead>
+                        <tr>
+                            <th class="col-name">
+                                Description
+                            </th>
+                            <th class="col-time">
+                                Available Times
+                            </th>
+                            <th class="col-price">
+                                Price
+                            </th>
+                            <th class="col-action"></th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: menuItems">
+                        <tr>
+                            <td class="col-name">
+                                <span data-bind="text: descr"></span>
+                            </td>
+                            <td class="col-time">
+                                <span data-bind="visible: breakfast" title="8:00 AM - 9:45 AM">Breakfast</span>
+                                <span data-bind="visible: (lunch || supper) && breakfast">-</span>
+                                <span data-bind="visible: lunch" title="9:45 AM - 2:00 PM">Lunch</span>
+                                <span data-bind="visible: (lunch || breakfast) && supper">-</span>
+                                <span data-bind="visible: supper" title="2:00 PM - 11:59 PM">Supper</span>
+                            </td>
+                            <td class="col-price">
+                                <span data-bind="text: '$'+price().toFixed(2)"></span>
+                            </td>
+                            <td class="col-action" style="text-align: center;">
+                                <a data-bind="click: Cafeteria.OrderPage.addItemFromMenu.bind(Cafeteria.OrderPage), visible:Cafeteria.OrderPage.menuItemAvailableOnReadyBy($data)" href="" class="addToOrder ui-button ui-corner-all ui-widget" role="button">Add</a>
+                                <span class="ui-button-icon ui-icon ui-icon-info" data-bind="visible: !Cafeteria.OrderPage.menuItemAvailableOnReadyBy($data), attr: { title: 'Not available for ' + Cafeteria.OrderPage.selectedMealTime() + '. Check your order\'s \'ready by\' time.' }"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /ko -->
+        </div>
+        <div class="buttonBar" title="">
+            <button id="reviewButton" title="Submit Order" role="button" class="submitButton ui-button ui-corner-all ui-widget" data-bind="visible: orderItems().length, disable: submitting() || !orderItems().length, click: reviewOrder">Review Order</button>
+        </div>
+    </div>
+
+    
+    <div class="cartPane hidden" >
+        <table class="cartTable" data-bind="visible: $data.orderItems().length > 0">
+            <thead>
+                <tr>
+                    <th class="col-quantity">
+                        Quantity
+                    </th>
+                    <th class="col-name">
+                        Name
+                    </th>
+                    <th class="col-price">
+                        Price
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: orderItems">
+                <tr>
+                    <td class="col-quantity">
+                        <input type="number" min="1" max="10" name="qty" data-bind="numeric, value: qty" autocomplete="off" style="width: 50px;" />
+                        <input type="hidden" name="item" data-bind="value: item" />
+                    </td>
+                    <td class="col-name">
+                        <span data-bind="text:descr"></span>
+                    </td>
+                    <td class="col-price">
+                        <span data-bind="text:'$' + ( Number(qty()) * Number(price()) ).toFixed(2)"></span>
+                    </td>
+                    <td class="col-action">
+                        <a href="" class="removeFromOrder ui-button ui-corner-all ui-widget" role="button" data-bind="click:Cafeteria.OrderPage.removeItem.bind(Cafeteria.OrderPage, $data)">Remove</a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th>Total</th>
+                    <th>
+                        <span data-bind="text: '$' + totalPrice().toFixed(2)"></span>
+                    </th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="cartRow" data-bind="visible: orderItems().length === 0">
+            <span style="font-style: italic;">No items in cart</span>
+        </div>
+        <div class="cartRow">
+            <label for="cartComment">Comment: </label>
+            <input id="cartComment" data-bind="value: comment" type="text" name="comment" style="width: 300px" />
+            <span class="error-message" data-bind="visible: comment.hasError && comment.hasError(), text: comment.errorMessage && comment.errorMessage()"></span>
+        </div>
+        
+
+        <div class="cartRow">
+            <label for="breaktime">Ready By:</label>
+            <input id="breaktime" type="text" name="breaktime" style="" data-bind="timepicker: timePickerOptions, timeValue: readyBy, value: readyByDisplay" />
+            <span data-bind="text: selectedMealTime"></span><br/>
+            <span class="error-message" data-bind="visible: readyByDisplay.hasError && readyByDisplay.hasError(), text: readyByDisplay.errorMessage && readyByDisplay.errorMessage()"></span>
+        </div>
+        <ul id="errors" class="error-message" data-bind="foreach: generalErrors">
+            <li><span data-bind="text: $data"></span></li>
+        </ul>
+    </div>
+
+    
+
+<div id='confirm-order' class='dialog' style='display: none' title='Confirm Order'>
+    <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+    <span class="confirmationMessage">Your total cost is: $|COST|. Are you sure you want to order these items? It cannot be un-done.</span>
+</div>
+
+
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <hr />
+        <footer>
+            <p style="color: white;">
+                &copy; 2023 - Cougar Drilling Solutions 
+                
+            </p>
+        </footer>
+    </div>
+
+    <script src="/bundles/jquery?v=2u0aRenDpYxArEyILB59ETSCA2cfQkSMlxb6jbMBqf81"></script>
+
+    
+    <script src="/bundles/order?v=0yTKRIwx6UXzd9kO_yQJBKr8_KtCXYvdYOYzWwuPE101"></script>
+
+
+    
+    <script type="text/javascript">
+
+        $(function ()
+        {
+            const today = new Date();
+            const mealTimes = {
+                breakfastStart: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 8, 0, 0),
+                breakfastEnd:  new Date(today.getFullYear(), today.getMonth(), today.getDate(), 9, 45, 0),
+                lunchStart:  new Date(today.getFullYear(), today.getMonth(), today.getDate(), 9, 45, 1),
+                lunchEnd:  new Date(today.getFullYear(), today.getMonth(), today.getDate(), 14, 0, 0),
+                supperStart:  new Date(today.getFullYear(), today.getMonth(), today.getDate(), 14, 0, 0),
+                supperEnd:  new Date(today.getFullYear(), today.getMonth(), today.getDate(), 23, 59, 59),
+                leadTimeMinutes: 15
+            };
+            const orderItems = [];
+            const menuItemCategories = [{"category":"$5.00 Cougar Specials","menuItems":[{"item":73,"descr":"Blue Plate Breakfast (Bacon, Eggs, Hashbrowns, Toast: White or Brown) (We can cook eggs however you want just leave it in the comment section)","price":5.0,"category":"$5.00 Cougar Specials","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":525,"descr":"Meals in the fridge!","price":5.0,"category":"$5.00 Cougar Specials","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":526,"descr":"Chef Salad w/Chicken","price":5.0,"category":"$5.00 Cougar Specials","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":535,"descr":"Wednesday: Half rack of ribs w/ corn + potato salad","price":5.0,"category":"$5.00 Cougar Specials","qty":1,"breakfast":false,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":541,"descr":"PRE ORDER FOR NEXT DAY MENU (FOR NIGHT SHIFT ONLY!!)","price":5.0,"category":"$5.00 Cougar Specials","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":574,"descr":"Chicken fingers and fries with plum sauce","price":6.0,"category":"$5.00 Cougar Specials","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true}]},{"category":"Breakfast","menuItems":[{"item":30,"descr":"Add Toast with Butter (White, Whole Wheat)","price":1.0,"category":"Breakfast","qty":1,"breakfast":true,"lunch":true,"supper":false,"expensed":false,"allowedToOrder":true},{"item":31,"descr":"Breakfast Wrap","price":4.75,"category":"Breakfast","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":34,"descr":"Extra Hash Browns","price":2.0,"category":"Breakfast","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":35,"descr":"Extra Bacon (3 Strips)","price":2.5,"category":"Breakfast","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":98,"descr":"Scramble and Toast","price":4.0,"category":"Breakfast","qty":1,"breakfast":true,"lunch":true,"supper":false,"expensed":false,"allowedToOrder":true},{"item":131,"descr":"Omelette - Cheese","price":4.0,"category":"Breakfast","qty":1,"breakfast":true,"lunch":true,"supper":false,"expensed":false,"allowedToOrder":true},{"item":440,"descr":"Extra egg","price":0.75,"category":"Breakfast","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":488,"descr":"Breakfast Sandwich On Rye  ( Eggs, Bacon, Cheese, Mayo, Lettuce, and Tomato)","price":5.5,"category":"Breakfast","qty":1,"breakfast":true,"lunch":false,"supper":false,"expensed":false,"allowedToOrder":false},{"item":519,"descr":"Mixed berry, granola, honey, yogurt parfait","price":4.25,"category":"Breakfast","qty":1,"breakfast":true,"lunch":true,"supper":false,"expensed":false,"allowedToOrder":true},{"item":588,"descr":"oatmeal...","price":5.0,"category":"Breakfast","qty":1,"breakfast":true,"lunch":false,"supper":false,"expensed":false,"allowedToOrder":false}]},{"category":"Dessert","menuItems":[{"item":80,"descr":"Cookie Two Pack","price":2.5,"category":"Dessert","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":100,"descr":"Sourdough ASK IF AVAILABLE","price":6.0,"category":"Dessert","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":537,"descr":"Scone or muffin","price":1.25,"category":"Dessert","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":580,"descr":"Cinnamon Bun","price":4.0,"category":"Dessert","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true}]},{"category":"Drink","menuItems":[{"item":47,"descr":"Pop Can","price":1.5,"category":"Drink","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":77,"descr":"Chocolate Milk","price":2.5,"category":"Drink","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":92,"descr":"OJ/AJ","price":2.5,"category":"Drink","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":94,"descr":"Monster - Green","price":3.75,"category":"Drink","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":479,"descr":"Water Bottle 500 ml","price":1.5,"category":"Drink","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true}]},{"category":"Sandwich","menuItems":[{"item":110,"descr":"Grilled Cheese Sandwich on rye","price":5.0,"category":"Sandwich","qty":1,"breakfast":true,"lunch":true,"supper":false,"expensed":false,"allowedToOrder":true}]},{"category":"Side","menuItems":[{"item":68,"descr":"Add Chicken","price":3.0,"category":"Side","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":70,"descr":"Add Gravy","price":1.5,"category":"Side","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":240,"descr":"Fries","price":3.5,"category":"Side","qty":1,"breakfast":false,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":344,"descr":"BLT Sandwich + Fries","price":5.5,"category":"Side","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true}]},{"category":"Special","menuItems":[{"item":432,"descr":"Burger and Fries","price":6.25,"category":"Special","qty":1,"breakfast":false,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":587,"descr":"Aron's Knife Sharpening","price":15.0,"category":"Special","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true},{"item":592,"descr":"Faron","price":60.0,"category":"Special","qty":1,"breakfast":true,"lunch":true,"supper":true,"expensed":false,"allowedToOrder":true}]}];
+            Cafeteria.OrderPage.initialize({orderItems: orderItems, menuItemCategories: menuItemCategories, mealTimes: mealTimes });
+            Cafeteria.OrderPage.bindEvents();
+        });
+    </script>
+
+</body>
+</html>

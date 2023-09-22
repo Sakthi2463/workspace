@@ -1,0 +1,225 @@
+body {
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    margin: 0
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px
+}
+
+.dl-horizontal dt {
+    white-space: normal
+}
+
+input,
+select,
+textarea {
+    max-width: 280px
+}
+
+.CougarListItem a:link,
+.navbar a:link {
+    color: #fff;
+    text-decoration: none
+}
+
+.CougarListItem a:visited,
+.navbar a:visited {
+    color: #fff;
+    text-decoration: none
+}
+
+.CougarListItem a:hover,
+.navbar a:hover {
+    color: #00bfb2;
+    font-weight: bold
+}
+
+.CougarListItem a:active,
+.navbar a:active {
+    color: #00bfb2;
+    font-weight: bold
+}
+
+a:link {
+    text-decoration: none
+}
+
+.ui-widget-content a:hover,
+.ui-widget-content a:active {
+    font-weight: bold;
+    color: #00bfb2
+}
+
+.hidden {
+    display: none
+}
+
+.cougarFormviewerViewFormCard {
+    background-color: #fff;
+    margin-bottom: 48px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .37);
+    word-wrap: break-word
+}
+
+.cougarLightBackground {
+    background-color: #968c83
+}
+
+.cougarFormviewerViewCenteredContent {
+    margin: auto;
+    padding-top: 50px;
+    width: 750px
+}
+
+.cougarFormviewerViewFormContentWrapper {
+    display: flex;
+    flex-direction: column
+}
+
+.cougarFormviewerViewAccentBanner {
+    height: 8px
+}
+
+.cougarAccentBackground {
+    background-color: #00bfb2;
+    color: rgba(0, 0, 0, 1)
+}
+
+.cougarFormviewerViewFormContent {
+    color: rgba(0, 0, 0, .87);
+    padding: 34px 17px
+}
+
+.cougarFormviewerViewHeaderHeader {
+    margin-bottom: 22px
+}
+
+.cougarFormviewerViewFormContent>div {
+    padding: 0 17px
+}
+
+.cougarFormviewerViewHeaderTitleRow {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
+
+.cougarFormviewerViewHeaderDescription {
+    font-size: 13px
+}
+
+.cougarFormviewerViewHeaderRequiredLegend,
+.cougarFormviewerViewHeaderDisclosure {
+    margin-top: 22px;
+    font-size: 13px
+}
+
+.cougarFormviewerViewHeaderRequiredLegend {
+    color: #db4437
+}
+
+.cougarFormviewerViewHeaderTitle {
+    box-sizing: border-box;
+    font-size: 34px;
+    text-align: center;
+    line-height: 135%;
+    width: 100%
+}
+
+.CougarList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center
+}
+
+.CougarListItem {
+    margin-top: 20px
+}
+
+.CougarButton {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .37);
+    height: 45px;
+    background-color: #968c83
+}
+
+.CougarButtonText {
+    font-size: 30px;
+    line-height: 45px;
+    text-align: center;
+    margin: 0
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden
+}
+
+.navbar-nav {
+    list-style: none
+}
+
+.navbar .navbar-right li {
+    float: right
+}
+
+.navbar li {
+    float: left;
+    text-align: center;
+    padding: 14px 16px
+}
+
+.navbar .navbar-text {
+    color: #fff
+}
+
+.navbar li a {
+    text-decoration: none;
+    font-size: 17px
+}
+
+.navbar li .active {
+    background-color: #4caf50;
+    color: #fff
+}
+
+.dataTable.stripe tr.even,
+.stripe tr:nth-child(even) {
+    background-color: #f9f9f9
+}
+
+div.dataTables_length {
+    float: left;
+    margin: 10px 0
+}
+
+div.dataTables_filter {
+    float: right;
+    margin: 10px 0
+}
+
+.pageHeading {
+    color: #968c83;
+    text-align: center
+}
+
+.error-message {
+    color: red;
+    font-size: smaller
+}
+
+.error-element {
+    border: 1px solid red
+}
+
+#errors {
+    padding-left: 0;
+    padding-top: 5px
+}
+
+#errors li {
+    list-style-type: none
+}
